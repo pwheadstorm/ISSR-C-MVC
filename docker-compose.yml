@@ -1,0 +1,7 @@
+services:
+  issr:
+    image: charje/issr-server
+    environment:
+      ISSR_APPLICATION: host.docker.internal:5206
+    ports:
+      - 3000:3000

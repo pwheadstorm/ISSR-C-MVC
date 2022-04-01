@@ -1,0 +1,32 @@
+﻿@model Microsoft.AspNetCore.Http.IFormCollection
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+
+<html>
+    <head>
+    <link rel="stylesheet" href="tally.css"/>
+    <title>Tally Demo</title>
+    </head>
+    <body>
+    <h1>Tally</h1>
+    <button onclick="rr(this)" action="addx">+</button>
+    <button onclick="rr(this)" action="subx">-</button>
+    <br />
+    <!--<div>Add: @ViewData["Counter"]</div><br />-->
+    <ul>
+        @if(ViewData["Counter"] != null)
+        {
+            int counter = 0;
+            Int32.TryParse(ViewData["Counter"].ToString(), out counter);
+            for (int i = 1; i <= counter; i++)
+            {
+                <li>@i</li>
+            }
+        }
+    </ul>
+    
+    </body>
+</html>
